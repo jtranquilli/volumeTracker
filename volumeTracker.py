@@ -5,8 +5,6 @@ from twilio.rest import Client
 
 
 
-#https://github.com/Derrick-Sherrill/DerrickSherrill.com/blob/master/Sample%20Data/companylist.csv
-
 df = pd.read_csv('companylist.csv')
 
 print(df['Symbol'])
