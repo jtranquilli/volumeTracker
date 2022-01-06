@@ -1,5 +1,5 @@
 import yfinance as fy
-import pandas as import pd
+import pandas as pd
 import os
 from twilio.rest import Client
 
