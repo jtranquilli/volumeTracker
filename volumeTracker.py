@@ -5,17 +5,23 @@ from twilio.rest import Client
 
 
 
-df = pd.read_csv('companylist.csv')
+df = pd.read_csv('/Users/juliustranquilli/desktop/companylist.csv')
 
 print(df['Symbol'])
 
 upSymbols = []
 
+
+
+
 for stock in df['Symbol']:
     stock = stock.upper()
     if '^' in stock: #ignoring formatting problems in the .csv file
         pass
+    
     else:
+        try:
+                   
             stock_info = fy.Ticker(stock)
 
             history = stock_info.history(period="5d")
@@ -24,12 +30,15 @@ for stock in df['Symbol']:
 
             today_vol = history['Volume'][-1]
 
-            if today_vol > prevAverageVol * 3 :
+            if (today_vol > prevAverageVol * 3) :
 
                 upSymbols.append(stock)
+                
+        except:
+            pass
 
            
-               
+print(upSymbols)        
 
 print(upSymbols)
 
