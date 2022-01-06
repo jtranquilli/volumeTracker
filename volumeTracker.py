@@ -16,8 +16,7 @@ for stock in df['Symbol']:
     if '^' in stock: #ignoring formatting problems in the .csv file
         pass
     else:
-        try:
-            stock_info = yf.Ticker(stock)
+            stock_info = fy.Ticker(stock)
 
             history = stock_info.history(period="5d")
 
@@ -29,9 +28,7 @@ for stock in df['Symbol']:
 
                 upSymbols.append(stock)
 
-            except:
-
-                pass
+           
                
 
 print(upSymbols)
