@@ -32,8 +32,7 @@ for stock in df['Symbol']:
             except:
 
                 pass
-                AC265bd9d2ca73e357c8c04625f8939c18
-                AC7d88d0d26a1146dc0f61f67c22d65550
+               
 
 print(upSymbols)
 
